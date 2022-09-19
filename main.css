@@ -10,8 +10,8 @@ header {
   background-image: url("./images/desktop/image-header.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
-  height: 40vh;
+  background-position: center 60%;
+  height: 50vh;
 }
 
 nav {
@@ -62,7 +62,7 @@ nav {
 h1 {
   text-align: center;
   font-size: 1.2rem;
-  margin-top: 5%;
+  margin-top: 6vh;
   text-transform: uppercase;
   color: white;
   letter-spacing: 1rem;
@@ -79,7 +79,7 @@ h1 {
 }
 
 #arrow {
-  width: 1.6vw;
+  width: 1vw;
   height: 8vh;
 }
 
@@ -301,8 +301,9 @@ h2 {
 .images img {
   object-fit: cover;
   width: 25vw;
-  height: 50vh;
+  height: 40vh;
 }
+
 #image1 {
   grid-area: image1;
 }
@@ -321,7 +322,7 @@ h2 {
 
 footer {
   display: flex;
-  height: 25vh;
+  height: 30vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -371,6 +372,15 @@ footer .icons a {
   #hamburger {
     display: block;
   }
+  .images img {
+    height: 30vw;
+  }
+}
+
+@media screen and (min-width: 530px) and (max-width: 1467px) {
+  .images img {
+    height: 30vw;
+  }
 }
 
 @media screen and (max-width: 530px) {
@@ -402,8 +412,18 @@ footer .icons a {
 
   .text {
     align-items: center;
+    padding: 1em;
   }
 
+  #text--1,
+  #text--2 {
+    padding: 2em;
+  }
+  #text--1 p,
+  #text--2 p {
+    font-size: 0.85em;
+    font-weight: 600;
+  }
   #text--1 h2,
   p {
     text-align: center;
@@ -413,6 +433,10 @@ footer .icons a {
   p {
     text-align: center;
   }
+  .testimonials {
+    margin: 2em;
+  }
+
   .images {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -422,7 +446,8 @@ footer .icons a {
   }
   .images img {
     width: 50vw;
-    height: 20vh;
+    height: 45vh;
+    object-position: center center;
   }
 
   .footer-links {
@@ -430,16 +455,18 @@ footer .icons a {
     justify-content: space-between;
   }
   .footer-links a {
-    font-size: 1.8em;
+    font-size: 1.2em;
   }
   .icons a {
     margin-right: 4vw;
   }
-
+  .icons a:last-child {
+    margin-right: 0;
+  }
   .icons a svg {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
   #logoFooter svg {
-    transform: scale(1.7);
+    transform: scale(1.3);
   }
 }
