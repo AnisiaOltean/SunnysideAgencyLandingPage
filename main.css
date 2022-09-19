@@ -6,7 +6,7 @@
 }
 
 header {
-  padding: 0.9rem 0.8rem 0 0.8rem;
+  padding: 1.2rem 1.5rem 0 1.5rem;
   background-image: url("./images/desktop/image-header.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,6 +22,11 @@ nav {
   height: 10%;
   width: 100%;
   color: white;
+}
+
+/*do not show hamburger for wide screen sizes*/
+#hamburger {
+  display: none;
 }
 
 .navbar {
@@ -290,6 +295,7 @@ h2 {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   grid-template-areas: "image1 image2 image3 image4";
+  overflow-x: hidden;
 }
 
 .images img {
@@ -327,6 +333,7 @@ footer {
 footer ul {
   list-style-type: none;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 0;
@@ -352,4 +359,87 @@ footer .icons a {
 
 .attribution {
   background-color: hsl(168, 60%, 63%);
+}
+
+/*Responsive queries*/
+
+/*media query for small screen sizes*/
+@media screen and (max-width: 630px) {
+  .navbar {
+    display: none;
+  }
+  #hamburger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  #arrow {
+    width: 3vw;
+    height: 5.7vh;
+  }
+  .hero--1 {
+    grid-template-columns: minmax(120px, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      "img1"
+      "text1"
+      "img2"
+      "text2"
+      "text3"
+      "text4";
+  }
+  .card-grid {
+    grid-template-columns: minmax(120px, 1fr);
+    column-gap: 0;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3";
+    row-gap: 4vh;
+  }
+
+  .text {
+    align-items: center;
+  }
+
+  #text--1 h2,
+  p {
+    text-align: center;
+  }
+
+  #text--2 h2,
+  p {
+    text-align: center;
+  }
+  .images {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "image1 image2"
+      "image3 image4";
+  }
+  .images img {
+    width: 50vw;
+    height: 20vh;
+  }
+
+  .footer-links {
+    padding-left: 0;
+    justify-content: space-between;
+  }
+  .footer-links a {
+    font-size: 1.8em;
+  }
+  .icons a {
+    margin-right: 4vw;
+  }
+
+  .icons a svg {
+    transform: scale(1.5);
+  }
+  #logoFooter svg {
+    transform: scale(1.7);
+  }
 }
