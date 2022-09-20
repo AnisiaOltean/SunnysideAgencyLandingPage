@@ -5,6 +5,10 @@
   font-size: 18px;
 }
 
+body {
+  position: relative;
+}
+
 header {
   padding: 1.2rem 1.5rem 0 1.5rem;
   background-image: url("./images/desktop/image-header.jpg");
@@ -36,6 +40,9 @@ nav {
   max-width: 35%;
   justify-content: center;
   align-items: baseline;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .navbar li {
   margin-left: 2rem;
@@ -45,10 +52,12 @@ nav {
 
 .navbar li:hover {
   cursor: pointer;
+  opacity: 0.8;
 }
 
 #btnCtc {
   background-color: white;
+  color: hsl(212, 27%, 19%);
   border-radius: 19px;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
@@ -81,6 +90,15 @@ h1 {
 #arrow {
   width: 1vw;
   height: 8vh;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 1.5rem 1.5rem;
+  border-color: transparent transparent #ffffff transparent;
+  display: none;
 }
 
 .hero--1 {
@@ -367,10 +385,63 @@ footer .icons a {
 /*media query for small screen sizes*/
 @media screen and (max-width: 630px) {
   .navbar {
+    padding: 0;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(232, 10%, 55%);
+    position: absolute;
+    top: 13vh;
+    right: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(50%);
+    height: fit-content;
+    width: calc(100% - 3rem);
+    max-width: 100%;
+    animation: showAnimation 0.2s ease-in-out;
+    /*transition: opacity 0.3s ease-in-out;*/
+  }
+
+  .navbar li {
+    margin-inline: 0;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+  .triangle {
+    position: absolute;
+    display: block;
+    top: 10vh;
+    right: 1.5rem;
+    animation: showAnimation 0.4s ease-in-out;
+    /*transition: opacity 0.3s ease-in-out;*/
+  }
+
+  .hidden {
     display: none;
+    /*opacity: 0;*/
+  }
+
+  @keyframes showAnimation {
+    0% {
+      opacity: 0.1;
+    }
+    25% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  #btnCtc {
+    background-color: hsl(51, 100%, 49%);
   }
   #hamburger {
     display: block;
+  }
+  #hamburger:hover {
+    opacity: 0.7;
   }
   .images img {
     height: 30vw;
